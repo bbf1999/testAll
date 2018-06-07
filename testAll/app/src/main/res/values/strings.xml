@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My testAll</string>
+    <string name="app_name">allTest</string>
     <string name="action_settings">设置栏</string>
     <string name="title_activity_main2">第二页</string>
     <string name="按钮">第二页</string>

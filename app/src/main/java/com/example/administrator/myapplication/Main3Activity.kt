@@ -14,7 +14,6 @@ class Main3Activity : AppCompatActivity() {
 
         tt3.text = this.intent.getStringExtra("name1")
 
-
         //var bundle =this.intent.extras
         //tt3.text=bundle.get("name").toString()
 

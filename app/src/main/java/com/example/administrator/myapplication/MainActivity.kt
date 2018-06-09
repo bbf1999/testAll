@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,10 +25,12 @@ class MainActivity : AppCompatActivity() {
         val tv2 = findViewById(R.id.textView2) as TextView
         val tv3: TextView = findViewById(R.id.textView3)
 
-        bt1.setOnClickListener {
-            tv1.text = "到第二页。。"
-            jump1()
-        }
+        //下面这个和ocClick方法冲突 不能同时用
+        // bt1.setOnClickListener {
+        //tv1.text = "到第二页。。"
+        //jump1()
+        // }
+
         tv2.setOnClickListener {
             tv2.text = "点击了自己！ "
         }
@@ -50,7 +53,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun jump1() {
+    //jump1要给xml文件用,注意 1,public 2,参数(View:View)
+    public fun jump1(View: View) {
         //https://blog.csdn.net/MySuperGirl/article/details/72677423
         val intent = Intent()//获取intent对象
         intent.setClass(this, Main2Activity::class.java)// 获取class是使用::反射

@@ -28,12 +28,12 @@ class Main2Activity : AppCompatActivity() {
 
         bt.setOnClickListener {
             IT1.setClass(this, MainActivity::class.java)
-            IT1.putExtra("name", et1.text.toString())
+            IT1.putExtra("name", et1.text.toString())//toString 不可省,否则不成功
             startActivity(IT1)
         }
         bt1.setOnClickListener {
             IT1.setClass(this, Main3Activity::class.java)
-            IT1.putExtra("name1", et1.text.toString())//toString 不可省,否则不成功
+            IT1.putExtra("name1", et1.text.toString())
 
             // var bundle = Bundle()
             //bundle.putString("name1",et1.text.toString())

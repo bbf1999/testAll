@@ -19,30 +19,36 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
         bt1 = findViewById(R.id.button1)
         val tv1 = findViewById<TextView>(R.id.textView2)
         val tv2 = findViewById(R.id.textView2) as TextView
-        val tv3: TextView = findViewById(R.id.textView2)
+        val tv3: TextView = findViewById(R.id.textView3)
 
         bt1.setOnClickListener {
             tv1.text = "到第二页。。"
             jump1()
         }
         tv2.setOnClickListener {
-            tv3.text = "点击了自己！ "
+            tv2.text = "点击了自己！ "
+        }
+
+        var info1 = intent.getStringExtra("name")
+        //orEmpty()非常重要,没有这个就报错
+        if (info1.orEmpty().length > 0) {
+            tv3.text = info1
         }
 
         val bt2 = findViewById<Button>(R.id.button2)
         bt2.setOnClickListener {
-
             startActivity(Intent(this, Main2Activity::class.java))
         }
-    }
 
+        //下面的浮动控件
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+        }
+    }
 
     private fun jump1() {
         //https://blog.csdn.net/MySuperGirl/article/details/72677423

@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         bt1 = findViewById(R.id.button1)
-        val tv1 = findViewById<TextView>(R.id.textView2)
-        val tv2 = findViewById(R.id.textView2) as TextView
-        val tv3: TextView = findViewById(R.id.textView3)
+        val tv1 = findViewById<TextView>(R.id.textView2)//方法1
+        val tv2 = findViewById(R.id.textView2) as TextView//方法2
+        val tv3: TextView = findViewById(R.id.textView3)//方法3
 
         //下面这个和ocClick方法冲突 不能同时用
         // bt1.setOnClickListener {
@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
             tv2.text = "点击了自己！ "
         }
 
-        var info1 = intent.getStringExtra("name")
+        val info1 = intent.getStringExtra("name")
         //orEmpty()非常重要,没有这个就报错
-        if (info1.orEmpty().length > 0) {
+        if (info1.isNotEmpty()) {
             tv3.text = info1
         }
 

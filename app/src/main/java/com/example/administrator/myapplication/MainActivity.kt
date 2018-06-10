@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,29 +22,23 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         bt1 = findViewById(R.id.button1)
-        val tv1 = findViewById<TextView>(R.id.textView2)//方法1
-        val tv2 = findViewById(R.id.textView2) as TextView//方法2
+        val tv2 = findViewById<TextView>(R.id.textView2) //方法2
         val tv3: TextView = findViewById(R.id.textView3)//方法3
-
-        //下面这个和ocClick方法冲突 不能同时用
-        // bt1.setOnClickListener {
-        //tv1.text = "到第二页。。"
-        //jump1()
-        // }
 
         tv2.setOnClickListener {
             tv2.text = "点击了自己！ "
-        }
-
-        val info1 = intent.getStringExtra("name")
-        //orEmpty()非常重要,没有这个就报错
-        if (info1.isNullOrEmpty().not()) {
-            tv3.text = info1
+            Toast.makeText(this, "点击了-self", Toast.LENGTH_SHORT).show()
         }
 
         val bt2 = findViewById<Button>(R.id.button2)
         bt2.setOnClickListener {
             startActivity(Intent(this, Main2Activity::class.java))
+        }
+
+        //接收intent的信息，重点为参数
+        val info1 = intent.getStringExtra("name")
+        if (info1.isNullOrEmpty().not()) {
+            tv3.text = info1
         }
 
         //下面的浮动控件
@@ -53,12 +48,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //jump1要给xml文件用,注意 1,public 2,参数(View:View)
-    fun jump1(vv: View) {
-        //https://blog.csdn.net/MySuperGirl/article/details/72677423
-        val intent = Intent()//获取intent对象
-        intent.setClass(this, Main2Activity::class.java)// 获取class是使用::反射
-        startActivity(intent)
+    fun click(v: View?) {
+        when (v?.id) {
+            R.id.button1 -> {
+                //https://blog.csdn.net/MySuperGirl/article/details/72677423
+                val intent = Intent()//获取intent对象
+                intent.setClass(this, Main2Activity::class.java)// 获取class是使用::反射
+                startActivity(intent)
+            }
+            R.id.button4 -> {
+                Toast.makeText(this, "点击了button4", Toast.LENGTH_SHORT).show()
+            }
+            R.id.button3 -> {
+                Toast.makeText(this, "点击了button3", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

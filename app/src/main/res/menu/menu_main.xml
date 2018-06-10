@@ -13,13 +13,13 @@
         android:id="@+id/my_menu1"
         android:icon="@mipmap/ic_launcher"
         android:title="@string/menu1"
-        app:showAsAction="collapseActionView" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/my_menu2"
         android:icon="@mipmap/ic_launcher"
         android:title="@string/menu2"
-        app:showAsAction="never" />
+        app:showAsAction="collapseActionView" />
 
 
 </menu>

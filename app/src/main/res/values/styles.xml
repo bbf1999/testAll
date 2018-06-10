@@ -8,15 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <!-- 解决找不到coordinatorLayoutStyle的问题 -->
-        <item name="coordinatorLayoutStyle">@style/Theme.Design</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>
 
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <!-- 解决找不到coordinatorLayoutStyle的问题 -->
-        <item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>
+        <item name="android:windowActionBarOverlay">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

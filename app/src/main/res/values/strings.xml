@@ -9,4 +9,5 @@
     <string name="input1">input1</string>
     <string name="menu1">my menu1</string>
     <string name="menu2">my menu2</string>
+    <string name="tw1">TextView1</string>
 </resources>

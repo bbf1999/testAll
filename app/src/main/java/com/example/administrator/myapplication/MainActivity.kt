@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         val info1 = intent.getStringExtra("name")
         //orEmpty()非常重要,没有这个就报错
-        if (info1.isNotEmpty()) {
+        if (info1.isNullOrEmpty().not()) {
             tv3.text = info1
         }
 
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //jump1要给xml文件用,注意 1,public 2,参数(View:View)
-    public fun jump1(View: View) {
+    fun jump1(vv: View) {
         //https://blog.csdn.net/MySuperGirl/article/details/72677423
         val intent = Intent()//获取intent对象
         intent.setClass(this, Main2Activity::class.java)// 获取class是使用::反射

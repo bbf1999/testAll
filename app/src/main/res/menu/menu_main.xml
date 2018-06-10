@@ -5,19 +5,20 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
+        android:icon="@mipmap/ic_launcher"
         android:title="@string/action_settings"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/action_search"
+        android:id="@+id/my_menu1"
         android:icon="@mipmap/ic_launcher"
         android:title="@string/menu1"
         app:showAsAction="collapseActionView" />
 
     <item
-        android:id="@+id/myormy"
+        android:id="@+id/my_menu2"
         android:icon="@mipmap/ic_launcher"
-        android:title="@string/menu1"
+        android:title="@string/menu2"
         app:showAsAction="never" />
 
 

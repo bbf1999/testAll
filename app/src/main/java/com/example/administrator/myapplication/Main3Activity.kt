@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import org.jetbrains.anko.button
-import org.jetbrains.anko.editText
 import org.jetbrains.anko.relativeLayout
 import org.jetbrains.anko.sdk15.listeners.onClick
 import org.jetbrains.anko.toast
@@ -20,10 +19,10 @@ class Main3Activity : AppCompatActivity() {
 
         tt3.text = this.intent.getStringExtra("name1")
         relativeLayout {
-            var name = editText()
+
             button("button by anko test") {
                 onClick {
-                    toast("Hi,${name.text}!!")
+                    toast("你点击了<${this.text}>按钮!")
                 }
             }
         }

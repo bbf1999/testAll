@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         val bt2 = findViewById<Button>(R.id.button2)
         bt2.setOnClickListener {
-            startActivity(Intent(this, Main2Activity::class.java))
+            startActivity(Intent(this, Main3Activity::class.java))
         }
 
         //接收intent的信息，重点为参数

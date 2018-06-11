@@ -21,7 +21,7 @@ class Main3Activity : AppCompatActivity() {
         tt3.text = this.intent.getStringExtra("name1")
         relativeLayout {
             var name = editText()
-            button("button by anko") {
+            button("button by anko test") {
                 onClick {
                     toast("Hi,${name.text}!!")
                 }

@@ -20,11 +20,11 @@ class Main2Activity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        var bt = findViewById<Button>(R.id.button)
-        var et1 = findViewById<EditText>(R.id.et1)
-        var bt1 = findViewById<Button>(R.id.button1)
+        val bt = findViewById<Button>(R.id.button)
+        val et1 = findViewById<EditText>(R.id.et1)
+        val bt1 = findViewById<Button>(R.id.button1)
 
-        var IT1 = Intent()
+        val IT1 = Intent()
 
         bt.setOnClickListener {
             IT1.setClass(this, MainActivity::class.java)

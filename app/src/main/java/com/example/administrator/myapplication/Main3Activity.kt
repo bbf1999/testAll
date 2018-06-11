@@ -28,7 +28,7 @@ class Main3Activity : AppCompatActivity() {
 
             button("button by anko test") {
                 onClick {
-                    toast("你点击了<${this.text}>按钮!")
+                    toast("你点击了<${this.text}>按钮")
                 }
             }
 

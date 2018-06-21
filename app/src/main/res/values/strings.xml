@@ -10,4 +10,7 @@
     <string name="menu1">my menu1</string>
     <string name="menu2">my menu2</string>
     <string name="tw1">TextView3 接收intent信息</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
